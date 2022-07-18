@@ -1,11 +1,85 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Works!
-</body>
+  <head>
+    <title>Loogle Translate</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" />
+    <link rel="icon" href="favicon.ico">
+  </head>
+  <body>
+    <div class="">
+        
+      <section class="position-relative bg-light pb-40 mb-80">
+        
+        <div class="container pt-6 text-center">
+          <div>
+            <img src="{{ url_for('static', filename='logo-zeus-red.svg') }}" class="icon" />
+          </div>
+          <h2 class="mt-8 mb-8 mb-lg-12">Loogle Translate</h2>
+          <p class="max-w-3xl mx-auto mb-6 mb-lg-6 lead text-muted">A language translator that uses GPT-3 instruct series to translate text
+            into a variety of languages</p>
+          <div class="position-relative max-w-2xl mx-auto">
+            <div class="position-absolute start-0 end-0">
+              <div class="max-w-2xl mx-auto p-6 p-lg-10 bg-white rounded text-center shadow-lg">
+                <form method="post">
+                  <div class="position-relative mb-6">
+                    <textarea class="form-control" style="resize: none;" type="message" cols="20" rows="4" name="aiPrompt"
+                    id="aiPrompt" required placeholder="Translate..."></textarea>
+                    <span class="position-absolute start-0 top-0 ms-3 mt-n2 px-1 bg-white text-muted small">Enter text to translate</span>
+                  </div>
+                  <div class="position-relative mb-6">
+                    <select
+                    class="form-select mb-3"
+                    aria-label="example"
+                    name="language"
+                    required
+                  >
+                    <option selected>Select language</option>
+                    <option value="English">English</option>
+                    <option value="Swahili">Swahili</option>
+                    <option value="French">French</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Korean">Korean</option>
+                  </select>
+                    <span class="position-absolute start-0 top-0 ms-3 mt-n2 px-1 bg-white text-muted small">Select Language</span>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">Translate</button>
+                </form>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-12  p-4">
+                    <div class="bg-dark rounded py-12">
+                      <h3 class="text-center text-white">{{ answer }}</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img src="{{ url_for('static', filename='red-dot-left-bars.svg') }}" class="d-none d-lg-block position-absolute top-0 start-0 mt-32" />
+        <img src="{{ url_for('static', filename='yellow-dot-right-shield-blue-line.svg') }}" class="d-none d-lg-block position-absolute end-0" />
+      </section>
+        
+      <!-- <section class="mt-0">
+        <div class="container">
+            <div class="row">
+              <div class="col-12  p-4">
+                <div class="bg-dark rounded py-12">
+                  <h3 class="text-center">{{ answer }}</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section> -->
+    </div>
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+  </body>
 </html>
